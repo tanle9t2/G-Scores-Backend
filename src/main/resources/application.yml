@@ -1,0 +1,33 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  application:
+    name: g-score
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 1000
+        format_sql: true
+        order_inserts: true
+        generate_statistics: true
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.engine.jdbc.batch.internal.BatchingBatch: DEBUG
+    org.hibernate.stat: DEBUG
+
+server:
+  port: 8080
+
+app:
+  cors:
+    allowed-origin: ${FRONTEND_URL}

@@ -1,5 +1,6 @@
 package com.tanle.gscores.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,6 +21,7 @@ public class Score {
     private Double score;
 
     @ManyToOne
+    @JoinColumn(name = "student_id")
     private Student student;
 
     @ManyToOne
