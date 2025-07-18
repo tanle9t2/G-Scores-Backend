@@ -17,22 +17,11 @@ import java.util.Set;
 
 @RestController
 @RequestMapping(value = "/api/v1")
-//@RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:5173")
+@RequiredArgsConstructor
 public class StudentController {
-    @Autowired
-    private  StudentService studentService;
 
-    @Value("${DB_URL}")
-    private String dbUrl;
+    private final StudentService studentService;
 
-    @Value("${FRONTEND_URL}")
-    private String frontendUrl;
-
-    @GetMapping("/env-check")
-    public String checkEnv() {
-        return "DB_URL: " + dbUrl + ", FRONTEND_URL: " + frontendUrl;
-    }
 
     @GetMapping("/student/{id}")
     public ResponseEntity<StudentScoresResponse> getByStudentId(@PathVariable("id") String id) {

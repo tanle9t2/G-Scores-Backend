@@ -13,11 +13,8 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api/v1")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:5173")
 public class SubjectController {
     private final SubjectService subjectService;
-
-
     @GetMapping("/subjects")
     public ResponseEntity<List<SubjectResponse>> getStatistics() {
         List<SubjectResponse> response = subjectService.findAll();
