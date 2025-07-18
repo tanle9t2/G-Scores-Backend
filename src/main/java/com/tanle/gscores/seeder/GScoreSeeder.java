@@ -27,7 +27,7 @@ public class GScoreSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        File file = new File("dataset/diem_thi_thpt_2024.csv");
+        File file = new File("/app/dataset/diem_thi_thpt_2024.csv");
         if (!file.exists()) {
             throw new RuntimeException("File not found: " + file.getAbsolutePath());
         }
