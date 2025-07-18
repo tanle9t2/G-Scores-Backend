@@ -81,10 +81,10 @@ The backend will seed the database with the provided CSV file on startup.
 
 ## API Endpoints
 
-- `GET /students/{id}`: Retrieve scores by student ID.
-- `GET /subjects`: List all subjects.
-- `GET /statistics/subject/{id}`: Get statistics for a subject.
-- `GET /students/top10-groupA`: Get top 10 students for group A (Math, Physics, Chemistry).
+- `GET /api/v1//student/{id}`: Retrieve scores by student ID.
+- `GET /api/v1/subjects`: List all subjects.
+- `GET /api/v1/statistics?subjectId={id}`: Get statistics for a subject.
+- `GET /api/v1//student/top`: Get top 10 students for group A (Math, Physics, Chemistry).
 
 ## Structure
 
@@ -93,6 +93,5 @@ The backend will seed the database with the provided CSV file on startup.
 - Repository interfaces: `repository/`
 - Business logic/services: `service/impl/`
 - Entities: `entity/`
-
-
+### Link: https://g-scores-backend-production.up.railway.app
 **Author:** [tanle9t2](https://github.com/tanle9t2)
