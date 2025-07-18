@@ -18,17 +18,11 @@ public interface ScoreRepository extends JpaRepository<Score, Long> {
                         WHEN s.score >= 6 THEN '6–7.99'
                         WHEN s.score >= 4 THEN '4–5.99'
                         ELSE '<4'
-                    END,
+                    END AS score_range,
                     COUNT(s)
-                FROM Score s
+                FROM Score s 
                 where s.subject.id=:subjectId
-                GROUP BY s.subject,
-                         CASE 
-                             WHEN s.score >= 8 THEN '>=8'
-                             WHEN s.score >= 6 THEN '6–7.99'
-                             WHEN s.score >= 4 THEN '4–5.99'
-                             ELSE '<4'
-                         END
+                GROUP BY s.subject, score_range
             """)
     List<Object[]> staticsScoreBySubjectId(@Param("subjectId") Long id);
 }
