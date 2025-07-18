@@ -23,7 +23,7 @@ public class GScoreSeeder implements CommandLineRunner {
 
     private final StudentService studentService;
     private final SubjectService subjectService;
-    private static final int BATCH_SIZE = 1000;
+    private static final int BATCH_SIZE = 10;
 
     @Override
     public void run(String... args) throws Exception {
