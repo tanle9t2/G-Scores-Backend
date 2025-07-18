@@ -8,6 +8,7 @@ WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 
+COPY dataset ./dataset
 # Package the JAR without tests
 RUN mvn clean package -DskipTests
 
